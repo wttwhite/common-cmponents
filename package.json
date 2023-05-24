@@ -1,0 +1,45 @@
+{
+  "name": "hs-com",
+  "version": "0.1.0",
+  "description": "",
+  "main": "/lib/hs-com.common.js",
+  "files": [
+    "lib",
+    "packages"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --config ./webpack/webpack.dev.js",
+    "build:all": "webpack --config ./webpack/webpack.pro.js",
+    "build:com": "webpack --config ./webpack/webpack.pro.components.js",
+    "build": "npm run build:all && npm run build:com"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.6.14",
+    "vue-loader": "^15.10.1",
+    "vue-template-compiler": "2.6",
+    "webpack": "^5.75.0"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.14"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.3",
+    "css-minimizer-webpack-plugin": "^4.2.2",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "sass": "^1.56.0",
+    "sass-loader": "^13.1.0",
+    "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.6",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-merge": "^5.8.0"
+  }
+}
