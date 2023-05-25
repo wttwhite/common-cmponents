@@ -16,10 +16,10 @@
           <span v-if="item.assigneeName">
             处理人：{{ item.assigneeName }}
           </span>
-          <span v-if="item.comment && item.comment.type !== 'TJ'">
+          <span v-if="item.comment && item.comment.type">
             处理结果：{{ commitType[item.comment.type] }}
           </span>
-          <span v-if="item.comment && item.comment.type !== 'TJ'">
+          <span v-if="item.comment">
             处理意见： {{ item.comment.comment }}
           </span>
         </div>
@@ -44,6 +44,7 @@ export default {
   components: {},
   data() {
     return {
+      // CXTJ  提交（发起流程）
       // TJ  提交（发起流程）
       // SP  审批（审批通过）
       // TH  退回（审批被驳回）
@@ -52,7 +53,8 @@ export default {
       // CH  撤回（发起人撤回）
       // TG  自动跳过（尽量不要用，貌似有跳过的流程获取form数据会有部分表单数据丢失情况）
       commitType: {
-        TJ: "",
+        CXTJ: "重新提交",
+        TJ: "提交",
         SP: "同意",
         TH: "驳回",
         ZF: "作废",
